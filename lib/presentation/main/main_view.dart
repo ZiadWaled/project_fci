@@ -12,15 +12,14 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
         body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [ColorManager.firstGradient, ColorManager.secondGradient],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
-          ),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [ColorManager.firstGradient, ColorManager.secondGradient],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
       child: Column(
         children: [
           SizedBox(
@@ -47,18 +46,18 @@ class MainView extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 2 / 4,
             child: Column(
               children: [
-                Container(
+                SizedBox(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        catigory(
+                        CustomTextButton(
                           width: MediaQuery.of(context).size.width / 2.5,
                           height: 140,
                           text: 'F I R S T\n YEAR',
                         ),
-                        catigory(
+                        CustomTextButton(
                           width: MediaQuery.of(context).size.width / 2.5,
                           height: 140,
                           text: ' S E C O N D\n YEAR',
@@ -74,12 +73,12 @@ class MainView extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        catigory(
+                        CustomTextButton(
                           width: MediaQuery.of(context).size.width / 2.5,
                           height: 140,
                           text: 'T H I R D\n YEAR',
                         ),
-                        catigory(
+                        CustomTextButton(
                           width: MediaQuery.of(context).size.width / 2.5,
                           height: 140,
                           text: 'F O U R T H\n YEAR',

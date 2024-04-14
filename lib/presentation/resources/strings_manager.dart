@@ -28,4 +28,5 @@ class AppStrings {
   static const retryAgain = "Retry Again";
   static const ok = "OK";
   static const fciText = "Faculty of Computers and Information Suez Canal University";
+  static const yourCollegeText = "YOUR COLLEGE";
 }

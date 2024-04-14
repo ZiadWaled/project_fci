@@ -4,7 +4,7 @@ import 'package:fci/presentation/resources/app_router.dart';
 import 'package:fci/presentation/resources/assets_manager.dart';
 import 'package:fci/presentation/resources/color_manager.dart';
 import 'package:fci/presentation/resources/constants_manager.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:fci/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -51,7 +51,7 @@ class _SplashViewState extends State<SplashView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'YOUR COLLEGE',
+                AppStrings.yourCollegeText,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               Text(
