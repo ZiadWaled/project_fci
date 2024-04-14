@@ -1,0 +1,31 @@
+class AppStrings {
+  static const noRouteFound = "No Route Found";
+  static const onBoardingTitle1 = "Welcome to Suez Canal University";
+  static const onBoardingTitle2 = "SCU is a community of talented students, teachers, and researchers. In addition to, a wide range of professional, administrative support and service staff,all of whom are committed to help change this world for the better.";
+  static const onBoardingTitle3 = "Also, we encourage each other to work hardnot only to earn degrees or public recognition, but also to be leaders in this changing world.";
+  static const onBoardingTitle4 = "SEE THE BEST COURSE #4";
+  static const onBoardingSubTitle1 =
+      "Tut app is an awesome flutter application using clean architecture #1";
+  static const onBoardingSubTitle2 =
+      "Tut app is an awesome flutter application using clean architecture #2";
+  static const onBoardingSubTitle3 =
+      "Tut app is an awesome flutter application using clean architecture #3";
+  static const onBoardingSubTitle4 =
+      "Tut app is an awesome flutter application using clean architecture #4";
+  static const skip = "skip";
+  static const userName = "Username";
+  static const phone = "Phone";
+  static const email = "Email";
+  static const password = "Password";
+  static const userNameError = "Please enter your Username";
+  static const passwordError = "Please enter your password ";
+  static const phoneError = "Please enter your phone number ";
+  static const emailError = "Please enter your email ";
+  static const login = "Login";
+  static const forgetPassword = "Forget password";
+  static const registerText = "Not a member ? Sign up";
+  static const loading = "Loading...";
+  static const retryAgain = "Retry Again";
+  static const ok = "OK";
+  static const fciText = "Faculty of Computers and Information Suez Canal University";
+}
