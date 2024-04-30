@@ -1,31 +1,37 @@
+import 'package:fci/presentation/resources/color_manager.dart';
+import 'package:fci/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextButton extends StatelessWidget {
-  CustomTextButton({super.key, this.text, this.onDoubleTap, this.width, this.height});
+  CustomTextButton({
+    super.key,
+    this.text,
+    this.onTap,
+    this.width,
+    this.height,
+  }
+  );
   String? text;
-  Function()? onDoubleTap;
+  Function()? onTap;
   double? width;
   double? height;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onDoubleTap: onDoubleTap,
+      onTap: onTap,
       child: Container(
         alignment: Alignment.center,
         width: width!,
         height: height!,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: Colors.white),
+          borderRadius: BorderRadius.circular(AppSize.s20),
+          color: ColorManager.gray,
         ),
         child: Text(
           text!,
           textAlign: TextAlign.center,
           overflow: TextOverflow.clip,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-          ),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
     );

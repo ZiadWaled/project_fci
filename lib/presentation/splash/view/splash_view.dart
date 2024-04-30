@@ -36,13 +36,7 @@ class _SplashViewState extends State<SplashView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [ColorManager.firstGradient, ColorManager.secondGradient],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
+        decoration:ColorManager.backGroundColor(),
         child: Center(
             child: Stack(children: [
           SvgPicture.asset(ImageAssets.splashLogo),
@@ -55,11 +49,11 @@ class _SplashViewState extends State<SplashView> {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               Text(
-                'IN',
+                AppStrings.inText,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               Text(
-                'YOUR POCKET',
+                AppStrings.yourPocketText,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ],

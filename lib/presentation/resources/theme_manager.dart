@@ -14,7 +14,7 @@ ThemeData getAppTheme() {
     disabledColor: ColorManager.grey1,
     splashColor: ColorManager.lightPrimary, // ripple effect color
     // card view theme
-    cardTheme: CardTheme(
+    cardTheme: const CardTheme(
       color: ColorManager.white,
       shadowColor: ColorManager.gray,
       elevation: AppSize.s4,
@@ -31,8 +31,8 @@ ThemeData getAppTheme() {
           fontSize: 16,
         )),
     // button theme
-    buttonTheme: ButtonThemeData(
-      shape: const StadiumBorder(),
+    buttonTheme: const ButtonThemeData(
+      shape: StadiumBorder(),
       buttonColor: ColorManager.primary,
       disabledColor: ColorManager.gray,
       splashColor: ColorManager.lightPrimary, // ripple effect color
@@ -52,12 +52,15 @@ ThemeData getAppTheme() {
     textTheme: TextTheme(
       headlineLarge: getSemiBoldStyle(
           color: ColorManager.darkGray, fontSize: FontSize.s16), //head line 1
-      titleMedium: getRegularStyle(
-          color: ColorManager.darkGray, fontSize: FontSize.s14), //sup title 1
-      labelLarge:getMediumStyle(color: ColorManager.primary,fontSize: FontSize.s12),//button
+      titleMedium: getBoldStyle(
+          color: ColorManager.white, fontSize: FontSize.s20), //sup title 1
+      labelLarge:getBoldStyle(color: ColorManager.black,fontSize: FontSize.s30),//button
       bodyLarge: getRegularStyle(color: ColorManager.grey1), //caption
       bodySmall: getRegularStyle(color: ColorManager.gray), //bodyText1
-      titleLarge:getRegularStyle(color: ColorManager.yellow,fontSize: FontSize.s30)  
+      titleLarge:getBoldStyle(color: ColorManager.yellow,fontSize: FontSize.s30),
+
+      // textAlign: TextAlign.center,
+      // overflow: TextOverflow.clip,
     ),
 
     // input decoration theme (text form field)
@@ -80,39 +83,39 @@ ThemeData getAppTheme() {
         fontSize: FontSize.s14,
       ),
       // enabled border
-      enabledBorder: OutlineInputBorder(
+      enabledBorder: const OutlineInputBorder(
         borderSide: BorderSide(
           color: ColorManager.gray,
           width: AppSize.s1_5,
         ),
-        borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
+        borderRadius: BorderRadius.all(Radius.circular(AppSize.s8)),
       ),
 
       // focused border
-      focusedBorder: OutlineInputBorder(
+      focusedBorder: const OutlineInputBorder(
         borderSide: BorderSide(
           color: ColorManager.primary,
           width: AppSize.s1_5,
         ),
-        borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
+        borderRadius: BorderRadius.all(Radius.circular(AppSize.s8)),
       ),
 
       // error border
-      errorBorder: OutlineInputBorder(
+      errorBorder: const OutlineInputBorder(
         borderSide: BorderSide(
           color: ColorManager.error,
           width: AppSize.s1_5,
         ),
-        borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
+        borderRadius: BorderRadius.all(Radius.circular(AppSize.s8)),
       ),
 
       // focused error border
-      focusedErrorBorder: OutlineInputBorder(
+      focusedErrorBorder: const OutlineInputBorder(
         borderSide: BorderSide(
           color: ColorManager.primary,
           width: AppSize.s1_5,
         ),
-        borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
+        borderRadius: BorderRadius.all(Radius.circular(AppSize.s8)),
       ),
     ),
   );

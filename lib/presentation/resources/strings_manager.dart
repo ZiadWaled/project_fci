@@ -29,4 +29,16 @@ class AppStrings {
   static const ok = "OK";
   static const fciText = "Faculty of Computers and Information Suez Canal University";
   static const yourCollegeText = "YOUR COLLEGE";
+  static const inText = "IN";
+  static const yourPocketText = "YOUR POCKET";
+  static const firstYear = "F I R S T\n YEAR";
+  static const secondYear = "S E C O N D\n YEAR";
+  static const thirdYear = "'T H I R D\n YEAR";
+  static const fourthYear = "F O U R T H\n YEAR";
+  static const general = "G E N E R A L";
+  static const software = "SOFTWARE \n ENGINEERING";
+  static const bio = "BIOINFORMATICS";
+  static const cs = "Computer Science";
+  static const inS = "Information Systems";
+  // static const general = "THIRD YEAR\nG E N E R A L";
 }

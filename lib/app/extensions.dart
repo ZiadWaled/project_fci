@@ -1,5 +1,6 @@
 
 import 'package:fci/app/constants.dart';
+import 'package:flutter/material.dart';
 
 extension NonNullString on String? {
   String orEmpty() {
@@ -21,4 +22,10 @@ extension NonNullInt on int? {
       return this!;
     }
   }
+}
+
+
+extension MediaQueryValues on BuildContext {
+  double get width => MediaQuery.of(this).size.width;
+  double get height => MediaQuery.of(this).size.height;
 }

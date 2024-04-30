@@ -9,9 +9,9 @@ import 'package:fci/presentation/resources/strings_manager.dart';
 import 'package:fci/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-
 
 
 class OnBoardingView extends StatefulWidget {
@@ -57,36 +57,37 @@ class _OnBoardingViewState extends State<OnBoardingView> {
         appBar: AppBar(
           backgroundColor: ColorManager.white,
           elevation: AppSize.s0,
-          systemOverlayStyle: SystemUiOverlayStyle(
+          systemOverlayStyle: const SystemUiOverlayStyle(
             statusBarColor: ColorManager.white,
             statusBarIconBrightness: Brightness.dark,
           ),
         ),
         body: PageView.builder(
-            itemCount: sliderViewObject.numOfSlides,
-            controller: _pageController,
-            onPageChanged: (index) {
-              _viewModel.onPageChanged(index);
-            },
-            itemBuilder: (BuildContext context, int index) {
-              return OnBoardingPage(sliderViewObject.sliderObject);
-            }),
+          itemCount: sliderViewObject.numOfSlides,
+          // children: [],
+          controller: _pageController,
+          onPageChanged: (index) {
+            _viewModel.onPageChanged(index);
+          },
+          itemBuilder: (BuildContext context, int index) {
+            return OnBoardingPage(_viewModel.slidesList[index]);
+          },),
         bottomSheet: Container(
           height: 100,
-          color: ColorManager.white,
+          color: Colors.transparent,
           child: Column(
             children: [
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {
-                    GoRouter.of(context).pushReplacement(AppRouter.kLoginView);
+                    GoRouter.of(context).pushReplacement(AppRouter.kMainView);
                   },
                   child: Text(
                     AppStrings.skip,
                     textAlign: TextAlign.end,
                     overflow: TextOverflow.clip,
-                    style: Theme.of(context).textTheme.labelLarge,
+                    style: Theme.of(context).textTheme.headlineLarge,
                   ),
                 ),
               ),
@@ -100,7 +101,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
   Widget _getBottomSheetWidget(SliderViewObject sliderViewObject) {
     return Container(
-      color: ColorManager.primary,
+      color:ColorManager.primary,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -172,8 +173,9 @@ class OnBoardingPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SvgPicture.asset(_sliderObject.image!),
-        const SizedBox(height: AppSize.s14),
+        Image.asset(_sliderObject.image!),
+
+         const SizedBox(height: AppSize.s14),
         Padding(
           padding: const EdgeInsets.all(AppPadding.p8),
           child: Text(
@@ -183,8 +185,18 @@ class OnBoardingPage extends StatelessWidget {
             overflow: TextOverflow.clip,
           ),
         ),
-        const SizedBox(height: AppSize.s12),
-
+        const SizedBox(height: AppSize.s4),
+        // Padding(
+        //   padding: const EdgeInsets.all(AppPadding.p8),
+        //   child: Text(
+        //     _sliderObject.supTitle!,
+        //     style: Theme.of(context).textTheme.titleMedium,
+        //     maxLines: AppConstants.onBoardingMaxLien,
+        //     textAlign: TextAlign.center,
+        //     overflow: TextOverflow.clip,
+        //   ),
+        // ),
+        const SizedBox(height: AppSize.s60),
       ],
     );
   }
