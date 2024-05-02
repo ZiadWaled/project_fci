@@ -1,3 +1,6 @@
+import 'package:fci/presentation/main/widgets/custom_text_button.dart';
+import 'package:fci/presentation/resources/color_manager.dart';
+import 'package:fci/presentation/resources/values_manager.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

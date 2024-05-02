@@ -73,7 +73,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kMaterialView,
-        builder: (context, state) => const MaterialView(),
+        builder: (context, state) =>  MaterialView(),
       ),
     ],
   );

@@ -40,5 +40,10 @@ class AppStrings {
   static const bio = "BIOINFORMATICS";
   static const cs = "Computer Science";
   static const inS = "Information Systems";
+  static const lectures = "Lectures";
+  static const sections = "Sections";
+  static const tasks = "Tasks";
+  static const exams = "Exams";
+  static const summaries = "Summaries";
   // static const general = "THIRD YEAR\nG E N E R A L";
 }
