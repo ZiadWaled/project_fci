@@ -1,6 +1,10 @@
+import 'package:fci/presentation/resources/app_router.dart';
+import 'package:fci/presentation/resources/color_manager.dart';
 import 'package:fci/presentation/resources/strings_manager.dart';
+import 'package:fci/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -34,28 +38,27 @@ class SettingsView extends StatelessWidget {
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height *1/ 3,
-            child: const Center(
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 80),
-                    child: Text(
+            child:  Center(
+              child: Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
                       AppStrings.developers,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 35,
-                      ),
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(color: ColorManager.white,
+                        fontSize: AppSize.s30,),
+
+
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 15),
-                    child: Icon(
+                    const SizedBox(width: AppSize.s12,),
+                    const Icon(
                       Icons.people,
                       color: Color(0XFFFFA114),
                       size: 40,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -65,63 +68,68 @@ class SettingsView extends StatelessWidget {
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height *1/ 3,
-            child:  Center(
-              child: Row(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 100),
-                    child: Text(
-                      AppStrings.exit,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 35,
-                      ),
-                    ),
-                  ),
-                  IconButton(
+            child:  InkWell(
+              onTap: (){
+                GoRouter.of(context).push(AppRouter.kAboutView);
 
-                    icon:const Icon(Icons.exit_to_app, size: 40 ),
-                    color: const Color(0XFFFFA114),
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            backgroundColor:
-                            const Color(0xFF333333).withOpacity(0.5),
-                            title: const Text(
-                              AppStrings.exit,
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            content: const Text(
-                             AppStrings.sure,
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            actions: <Widget>[
-                              TextButton(
-                                onPressed: () => Navigator.of(context).pop(),
-                                child: const Text(
-                                  AppStrings.sure,
+              },
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                       Text(
+                         AppStrings.exit,
+                         style: Theme.of(context).textTheme.titleMedium?.copyWith(color: ColorManager.white,
+                           fontSize: AppSize.s30,),
+                       ),
+                      IconButton(
+
+                        icon:const Icon(Icons.exit_to_app, size: 40 ),
+                        color: const Color(0XFFFFA114),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                backgroundColor:
+                                const Color(0xFF333333).withOpacity(0.5),
+                                title: const Text(
+                                  AppStrings.exit,
                                   style: TextStyle(color: Colors.white),
                                 ),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  SystemNavigator.pop();
-                                },
-                                child: const Text(
-                                  'موافق',
+                                content: const Text(
+                                 AppStrings.sure,
                                   style: TextStyle(color: Colors.white),
                                 ),
-                              ),
-                            ],
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () => Navigator.of(context).pop(),
+                                    child: const Text(
+                                      AppStrings.sure,
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      SystemNavigator.pop();
+                                    },
+                                    child: const Text(
+                                      AppStrings.ok,
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
                           );
                         },
-                      );
-                    },
 
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),

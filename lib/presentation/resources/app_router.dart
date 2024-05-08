@@ -1,5 +1,6 @@
 
 import 'package:fci/app/di.dart';
+import 'package:fci/presentation/about_view/about_view.dart';
 import 'package:fci/presentation/college_specialization/view/college_specialization_view.dart';
 import 'package:fci/presentation/login/view/login_view.dart';
 import 'package:fci/presentation/main/view/main_view.dart';
@@ -22,12 +23,13 @@ abstract class AppRouter {
   static const kMaterialView = '/materialView';
   static const kTermsView = '/termsView';
   static const kSettingsView = '/settingsView';
+  static const kAboutView = '/aboutView';
 
   static final router = GoRouter(
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const SplashView(),
+        builder: (context, state) =>  DeveloperPage(),
       ),
       GoRoute(
         path: kCollegeSpecializationView,
@@ -69,6 +71,9 @@ abstract class AppRouter {
       GoRoute(
         path: kSettingsView,
         builder: (context, state) =>  const SettingsView(),
+      ),GoRoute(
+        path: kAboutView,
+        builder: (context, state) =>   DeveloperPage(),
       ),
     ],
   );

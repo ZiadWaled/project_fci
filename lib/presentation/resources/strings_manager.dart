@@ -49,5 +49,10 @@ class AppStrings {
   static const developers = "About the developers";
   static const exit = "Exit";
   static const sure = "Are you sure";
+  static const aboutDevelopers = "نبذه عن المطورين";
+  static const developersInfo = "We are third year students\nin the\nInformation Systems Department\nwithin the\nFaculty of Computers and Information\nat\nSuez Canal University";
+  static const ui = " Ahmed Selim \nMahmoud Saber";
+  static const mobile = "  Ziad Waled\nAmal Mahmoud\n Nour mohamed";
+  static const back = " Ahmed Mostafa\n Mohamed A tef\nZainab Fadel\nHadia Mohamed";
   // static const general = "THIRD YEAR\nG E N E R A L";
 }

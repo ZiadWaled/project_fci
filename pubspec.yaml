@@ -91,6 +91,8 @@ flutter:
     - assets/json/empty.json
     - assets/json/loading.json
     - assets/json/success.json
+    - assets/images/login_logo.png
+    - assets/images/linkedin.png
 
 
 

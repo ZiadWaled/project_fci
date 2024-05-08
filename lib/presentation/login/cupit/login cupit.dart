@@ -3,6 +3,7 @@ import 'package:fci/presentation/common/freezed_data_classes.dart';
 import 'package:fci/presentation/login/cupit/login_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginCubit extends Cubit<LoginStates> {
   final   formKey = GlobalKey<FormState>();
@@ -26,6 +27,8 @@ class LoginCubit extends Cubit<LoginStates> {
   }
 
   login() async {
+
+
     (await _loginUseCase.execute(
         LoginUseCaseInput(loginObject.userName, loginObject.password)))
         .fold(
