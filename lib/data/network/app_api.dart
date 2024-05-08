@@ -1,23 +1,15 @@
-// import 'package:clean_architecture/app/constants.dart';
-// import 'package:clean_architecture/data/response/responses.dart';
-// import 'package:dio/dio.dart';
-// import 'package:retrofit/http.dart';
-// part 'app_api.g.dart';
-//
-// @RestApi(baseUrl: Constants.baseUrl)
-// abstract class AppServiceClint {
-//   factory AppServiceClint(Dio dio, {String? baseUrl}) = _AppServiceClint;
-//   @POST("/customers/login")
-//   Future<AuthenticationResponse> login(
-//     @Field("email") String email,
-//     @Field("password") String password,
-//   );
-//
-//   @POST("/customer/signUp")
-//   Future<SignUpResponse> signUp(
-//     @Field("name") String name,
-//     @Field("phone") String phone,
-//     @Field("email") String email,
-//     @Field("password") String password,
-//   );
-// }
+import 'package:dio/dio.dart';
+import 'package:fci/app/constants.dart';
+import 'package:fci/data/response/responses.dart';
+import 'package:retrofit/http.dart';
+part 'app_api.g.dart';
+
+@RestApi(baseUrl: Constants.baseUrl)
+abstract class AppServiceClint {
+  factory AppServiceClint(Dio dio, {String? baseUrl}) = _AppServiceClint;
+  @POST("/users/login")
+  Future<LoginResponse> login(
+    @Field("email") String email,
+    @Field("password") String password,
+  );
+}

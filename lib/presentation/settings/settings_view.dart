@@ -1,0 +1,134 @@
+import 'package:fci/presentation/resources/strings_manager.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+class SettingsView extends StatelessWidget {
+  const SettingsView({super.key});
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold (
+      backgroundColor: const Color(0XFF333333),
+      body: Column(
+        children: [
+          const SizedBox(
+            width: 360,
+            height: 180,
+
+            child: Padding(
+              padding: EdgeInsets.only(top: 80),
+              child: Center(
+                child: Text(AppStrings.settings,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40
+                  ),),
+              ),
+            ),
+          ),
+          const Divider(
+            thickness: 5,
+            color: Color(0XFF2B2B2B),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height *1/ 3,
+            child: const Center(
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 80),
+                    child: Text(
+                      AppStrings.developers,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 35,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Icon(
+                      Icons.people,
+                      color: Color(0XFFFFA114),
+                      size: 40,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const Divider(
+            thickness: 0.5,
+            color: Colors.white,
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height *1/ 3,
+            child:  Center(
+              child: Row(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(left: 100),
+                    child: Text(
+                      AppStrings.exit,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 35,
+                      ),
+                    ),
+                  ),
+                  IconButton(
+
+                    icon:const Icon(Icons.exit_to_app, size: 40 ),
+                    color: const Color(0XFFFFA114),
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            backgroundColor:
+                            const Color(0xFF333333).withOpacity(0.5),
+                            title: const Text(
+                              AppStrings.exit,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            content: const Text(
+                             AppStrings.sure,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () => Navigator.of(context).pop(),
+                                child: const Text(
+                                  AppStrings.sure,
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  SystemNavigator.pop();
+                                },
+                                child: const Text(
+                                  'موافق',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
+
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+        ],
+      ),
+    );
+  }
+}
+

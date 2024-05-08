@@ -1,85 +1,59 @@
-// import 'package:json_annotation/json_annotation.dart';
-//
-// part 'responses.g.dart';
-//
-// @JsonSerializable()
-// class BaseResponse {
-//   @JsonKey(name: "status")
-//   int? status;
-//   @JsonKey(name: "message")
-//   String? message;
+import 'package:json_annotation/json_annotation.dart';
+
+part 'responses.g.dart';
+
+@JsonSerializable()
+class LoginResponse {
+  String password;
+  String email;
+  @JsonKey(name: "_id")
+  int id;
+  int results;
+
+  LoginResponse(this.password, this.email, this.id, this.results);
+
+  // toJson
+  Map<String, dynamic> toJson() => _$LoginResponseToJson(this);
+
+//fromJson
+  factory LoginResponse.fromJson(Map<String, dynamic> json) =>
+      _$LoginResponseFromJson(json);
+}
+
+// login response
+// {
+// "data": {
+// "_id": "6637981f994b6630010d9064",
+// "email": "Zainab123@gmail.com",
+// "password": "zainab",
+// "name": "Zaynaba",
+// "__v": 0
 // }
-//
-// @JsonSerializable()
-// class CustomerResponse {
-//   @JsonKey(name: "id")
-//   String? id;
-//   @JsonKey(name: "name")
-//   String? name;
-//   @JsonKey(name: "numOfNotifications")
-//   int? numOfNotifications;
-//
-//   CustomerResponse(this.id, this.name, this.numOfNotifications);
-//
-//   // from json
-//   factory CustomerResponse.fromJson(Map<String, dynamic> json) =>
-//       _$CustomerResponseFromJson(json);
-//
-//   // to json
-//   Map<String, dynamic> toJson() => _$CustomerResponseToJson(this);
 // }
-//
-// @JsonSerializable()
-// class ContactsResponse {
-//   @JsonKey(name: "phone")
-//   String? phone;
-//   @JsonKey(name: "email")
-//   String? email;
-//   @JsonKey(name: "link")
-//   String? link;
-//
-//   ContactsResponse(this.phone, this.email, this.link);
-//
-//   // from json
-//   factory ContactsResponse.fromJson(Map<String, dynamic> json) =>
-//       _$ContactsResponseFromJson(json);
-//
-//   // to json
-//   Map<String, dynamic> toJson() => _$ContactsResponseToJson(this);
+
+// data response
+// {
+// "results": 3,
+// "data": [
+// {
+// "_id": "6638e8c55024f017985f2749",
+// "name": "lec2",
+// "path": "http://localhost:3000/pdfs/category~8c192d15-b372-4b27-96ed-c688ebb98a38~1715005637087.pdf",
+// "subjectName": "Network",
+// "type": "exams"
+// },
+// {
+// "_id": "6639173d03f58ec770ee8eb8",
+// "name": "session1",
+// "path": "http://localhost:3000/pdfs/category~ae9b9990-9496-45b0-bb5c-518e569665e4~1715017533198.pdf",
+// "subjectName": "security",
+// "type": "lectures"
+// },
+// {
+// "_id": "66395d252409c84bdf2abe4d",
+// "name": "session1",
+// "path": "http://localhost:3000/pdfs/category~b1e444d4-f6e0-48ea-a6c7-66b6bc0fbcad~1715035429674.pdf",
+// "subjectName": "security",
+// "type": "lectures"
 // }
-//
-// @JsonSerializable()
-// class AuthenticationResponse extends BaseResponse {
-//   @JsonKey(name: "customer")
-//   CustomerResponse? customer;
-//   @JsonKey(name: "contacts")
-//   ContactsResponse? contacts;
-//
-//   AuthenticationResponse(this.customer, this.contacts);
-//
-//   // from json
-//   factory AuthenticationResponse.fromJson(Map<String, dynamic> json) =>
-//       _$AuthenticationResponseFromJson(json);
-//
-//   // to json
-//   Map<String, dynamic> toJson() => _$AuthenticationResponseToJson(this);
-// }
-//
-//
-//
-// @JsonSerializable()
-// class SignUpResponse extends BaseResponse {
-//   String name;
-//   String phone;
-//   String email;
-//   String password;
-//
-//   SignUpResponse(this.name, this.phone, this.email, this.password);
-//
-//   // toJson
-//   Map<String, dynamic> toJson() => _$SignUpResponseToJson(this);
-//
-// //fromJson
-//   factory SignUpResponse.fromJson(Map<String, dynamic> json) =>
-//       _$SignUpResponseFromJson(json);
-// }
+// ]

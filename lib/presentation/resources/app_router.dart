@@ -1,9 +1,11 @@
 
+import 'package:fci/app/di.dart';
 import 'package:fci/presentation/college_specialization/view/college_specialization_view.dart';
-import 'package:fci/presentation/forgot_password/forgot_password_view.dart';
+import 'package:fci/presentation/login/view/login_view.dart';
 import 'package:fci/presentation/main/view/main_view.dart';
 import 'package:fci/presentation/material/view/material_view.dart';
 import 'package:fci/presentation/onboarding/view/onboarding_view.dart';
+import 'package:fci/presentation/settings/settings_view.dart';
 import 'package:fci/presentation/splash/view/splash_view.dart';
 import 'package:fci/presentation/terms/term.dart';
 import 'package:fci/presentation/years/view/years_view.dart';
@@ -19,6 +21,7 @@ abstract class AppRouter {
   static const kCollegeSpecializationView = '/collegeSpecializationView';
   static const kMaterialView = '/materialView';
   static const kTermsView = '/termsView';
+  static const kSettingsView = '/settingsView';
 
   static final router = GoRouter(
     routes: [
@@ -31,13 +34,13 @@ abstract class AppRouter {
         builder: (context, state) => const CollegeSpecializationView (),
       ),
 
-      // GoRoute(
-      //   path: kLoginView,
-      //   builder: (context, state) {
-      //     initLoginModule();
-      //     return const LoginView();
-      //   },
-      // ),
+      GoRoute(
+        path: kLoginView,
+        builder: (context, state) {
+          initLoginModule();
+          return const LoginView();
+        },
+      ),
       GoRoute(
         path: kOnBoardingView,
         builder: (context, state) => const OnBoardingView(),
@@ -53,27 +56,19 @@ abstract class AppRouter {
         path: kMainView,
         builder: (context, state) => const MainView(),
       ),
-      // GoRoute(
-      //   path: kMainView,
-      //   builder: (context, state) => const MainView(),
-      // ),
-      // GoRoute(
-      //   path: kRegisterView,
-      //   builder: (context, state)  {
-      //     initRegisterModule();
-      //     return const RegisterView();},
-      // ),
-      GoRoute(
-        path: kForgotPasswordView,
-        builder: (context, state) => const ForgotPasswordView(),
-      ),
+
+
       GoRoute(
         path: kTermsView,
         builder: (context, state) => const TermsView(),
       ),
       GoRoute(
         path: kMaterialView,
-        builder: (context, state) =>  MaterialView(),
+        builder: (context, state) =>  const MaterialView(),
+      ),
+      GoRoute(
+        path: kSettingsView,
+        builder: (context, state) =>  const SettingsView(),
       ),
     ],
   );

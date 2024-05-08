@@ -16,35 +16,10 @@ class SliderViewObject {
       required this.numOfSlides});
 }
 
-class Customer {
-  String id;
-  String name;
-  int numOfNotifications;
-
-  Customer(
-      {required this.id, required this.name, required this.numOfNotifications});
-}
-
-class Contacts {
-  String phone;
-  String email;
-  String link;
-
-  Contacts({required this.phone, required this.email, required this.link});
-}
-
-class Authentication {
-  Customer? customer;
-  Contacts? contacts;
-
-  Authentication({required this.customer, required this.contacts});
-}
-
-class SignUp {
-  String name;
-  String phone;
+class Login {
   String email;
   String password;
+  int id;
 
-  SignUp(this.name, this.phone, this.email, this.password);
+  Login(this.email, this.password, this.id,);
 }

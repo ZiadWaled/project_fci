@@ -45,5 +45,9 @@ class AppStrings {
   static const tasks = "Tasks";
   static const exams = "Exams";
   static const summaries = "Summaries";
+  static const settings = "Settings";
+  static const developers = "About the developers";
+  static const exit = "Exit";
+  static const sure = "Are you sure";
   // static const general = "THIRD YEAR\nG E N E R A L";
 }

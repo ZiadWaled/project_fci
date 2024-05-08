@@ -1,4 +1,5 @@
 
+import 'package:fci/app/extensions.dart';
 import 'package:fci/domain/model/models.dart';
 import 'package:fci/presentation/onboarding/viewmodel/onboarding_viewmodel.dart';
 import 'package:fci/presentation/resources/app_router.dart';
@@ -81,7 +82,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {
-                    GoRouter.of(context).pushReplacement(AppRouter.kMainView);
+                    GoRouter.of(context).pushReplacement(AppRouter.kLoginView);
                   },
                   child: Text(
                     AppStrings.skip,
@@ -173,16 +174,19 @@ class OnBoardingPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset(_sliderObject.image!),
+        SizedBox(
+          height: context.height/2.3,
+            child: Image.asset(_sliderObject.image!,fit: BoxFit.cover,)),
 
          const SizedBox(height: AppSize.s14),
         Padding(
-          padding: const EdgeInsets.all(AppPadding.p8),
+          padding: const EdgeInsets.all(AppPadding.p16),
           child: Text(
             _sliderObject.title!,
             style: Theme.of(context).textTheme.headlineLarge,
             maxLines: AppConstants.onBoardingMaxLien,
             overflow: TextOverflow.clip,
+            textAlign: TextAlign.center,
           ),
         ),
         const SizedBox(height: AppSize.s4),

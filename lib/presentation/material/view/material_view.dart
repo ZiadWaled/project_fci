@@ -3,10 +3,12 @@ import 'package:fci/presentation/material/view/lectures/lectures_view.dart';
 import 'package:fci/presentation/material/view/sections/sections.dart';
 import 'package:fci/presentation/material/view/summaries/summaries_view.dart';
 import 'package:fci/presentation/material/view/tasks/tasks.view.dart';
+import 'package:fci/presentation/resources/app_router.dart';
 import 'package:fci/presentation/resources/color_manager.dart';
 import 'package:fci/presentation/resources/strings_manager.dart';
 import 'package:fci/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MaterialView extends StatefulWidget {
   const MaterialView({Key? key}) : super(key: key);
@@ -45,7 +47,8 @@ class _MaterialViewState extends State<MaterialView>
                 Padding(
                   padding: const EdgeInsets.only(top: AppSize.s20),
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                    },
                     icon: const Icon(
                       Icons.arrow_back,
                       color: ColorManager.darkPrimary,
@@ -72,7 +75,9 @@ class _MaterialViewState extends State<MaterialView>
                 Padding(
                   padding: const EdgeInsets.only(top: AppSize.s20),
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      GoRouter.of(context).push(AppRouter.kSettingsView);
+                    },
                     icon: const Icon(
                       Icons.settings,
                       color: ColorManager.darkPrimary,
