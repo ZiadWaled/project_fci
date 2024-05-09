@@ -35,9 +35,22 @@ class TermsView extends StatelessWidget {
                 CustomTextButton(
                   width: context.width,
                   height: context.height / 7,
-                  text: 'الشبكات العصبيه',
+                  text: 'Neural network',
                   onTap: (){
-                    GoRouter.of(context).pushReplacement(AppRouter.kMaterialView);
+                    GoRouter.of(context).push(AppRouter.kMaterialView,extra:"Neural network");
+                  },
+                ),
+
+
+                const SizedBox(
+                  height: AppSize.s14,
+                ),
+                CustomTextButton(
+                  width: context.width,
+                  height: context.height / 7,
+                  text: 'Network',
+                  onTap: (){
+                    GoRouter.of(context).push(AppRouter.kMaterialView,extra:"Network");
                   },
                 ),
                 const SizedBox(
@@ -46,7 +59,10 @@ class TermsView extends StatelessWidget {
                 CustomTextButton(
                   width: context.width,
                   height: context.height / 7,
-                  text: ' قواعد البيانات المتسلسله زمنيا',
+                  text: 'Time series',
+                  onTap: (){
+                    GoRouter.of(context).push(AppRouter.kMaterialView,extra:"Time series");
+                  },
                 ),
                 const SizedBox(
                   height: AppSize.s14,
@@ -54,7 +70,10 @@ class TermsView extends StatelessWidget {
                 CustomTextButton(
                   width: context.width,
                   height: context.height / 7,
-                  text: 'شبكات الموسسات',
+                  text: ' E government',
+                  onTap: (){
+                    GoRouter.of(context).push(AppRouter.kMaterialView,extra:" E government");
+                  },
                 ),
                 const SizedBox(
                   height: AppSize.s14,
@@ -62,7 +81,10 @@ class TermsView extends StatelessWidget {
                 CustomTextButton(
                   width: context.width,
                   height: context.height / 7,
-                  text: 'امن المعلومات',
+                  text: 'MMDB',
+                  onTap: (){
+                    GoRouter.of(context).push(AppRouter.kMaterialView,extra:"MMDB");
+                  },
                 ),
                 const SizedBox(
                   height: AppSize.s14,
@@ -70,15 +92,10 @@ class TermsView extends StatelessWidget {
                 CustomTextButton(
                   width: context.width,
                   height: context.height / 7,
-                  text: 'الحكومه الالكترويه',
-                ),
-                const SizedBox(
-                  height: AppSize.s14,
-                ),
-                CustomTextButton(
-                  width: context.width,
-                  height: context.height / 7,
-                  text: 'قواعد البيانات والوسائط المتعدده',
+                  text: 'Time series',
+                  onTap: (){
+                    GoRouter.of(context).push(AppRouter.kMaterialView,extra:"Time series");
+                  },
                 ),
               ]
               ),

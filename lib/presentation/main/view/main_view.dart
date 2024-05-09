@@ -58,7 +58,7 @@ class MainView extends StatelessWidget {
                         height: context.height / 5.3,
                         text:AppStrings.secondYear,
                         onTap: (){
-                          GoRouter.of(context).push(AppRouter.kYearsView, extra:AppStrings.firstYear,);
+                          GoRouter.of(context).push(AppRouter.kYearsView, extra:AppStrings.secondYear,);
                         },
                       )
                     ],

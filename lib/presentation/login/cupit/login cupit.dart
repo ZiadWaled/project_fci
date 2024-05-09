@@ -10,7 +10,7 @@ class LoginCubit extends Cubit<LoginStates> {
   final TextEditingController userNameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  LoginCubit(this._loginUseCase) : super(AppInitialState()); // Changed super constructor
+  LoginCubit(this._loginUseCase) : super(AppInitialState());
 
 
   var loginObject = LoginObjects("", "");
@@ -33,6 +33,8 @@ class LoginCubit extends Cubit<LoginStates> {
         LoginUseCaseInput(loginObject.userName, loginObject.password)))
         .fold(
             (failure) => {print(failure.code)}, // Corrected typo here
-            (data) => {print(data.id)});
+            (data) => {
+              print(data.id)
+            });
   }
 }

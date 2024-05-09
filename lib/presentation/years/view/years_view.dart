@@ -47,7 +47,7 @@ class YearsView extends StatelessWidget {
                       height: context.height / 7,
                       text: AppStrings.general,
                       onTap: () => GoRouter.of(context)
-                          .push(AppRouter.kCollegeSpecializationView),
+                          .push(AppRouter.kCollegeSpecializationView,),
                     ),
               
                     CustomTextButton(

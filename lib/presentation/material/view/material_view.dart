@@ -1,18 +1,19 @@
+import 'package:fci/presentation/material/view/tasks/tasks.view.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:fci/presentation/material/view/exams/exams_view.dart';
 import 'package:fci/presentation/material/view/lectures/lectures_view.dart';
 import 'package:fci/presentation/material/view/sections/sections.dart';
 import 'package:fci/presentation/material/view/summaries/summaries_view.dart';
-import 'package:fci/presentation/material/view/tasks/tasks.view.dart';
 import 'package:fci/presentation/resources/app_router.dart';
 import 'package:fci/presentation/resources/color_manager.dart';
 import 'package:fci/presentation/resources/strings_manager.dart';
 import 'package:fci/presentation/resources/values_manager.dart';
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class MaterialView extends StatefulWidget {
-  const MaterialView({Key? key}) : super(key: key);
-
+  const MaterialView({Key? key, required this.text}) : super(key: key);
+  final String text;
   @override
   State<MaterialView> createState() => _MaterialViewState();
 }
@@ -48,6 +49,7 @@ class _MaterialViewState extends State<MaterialView>
                   padding: const EdgeInsets.only(top: AppSize.s20),
                   child: IconButton(
                     onPressed: () {
+                      Navigator.pop(context);
                     },
                     icon: const Icon(
                       Icons.arrow_back,
@@ -56,14 +58,13 @@ class _MaterialViewState extends State<MaterialView>
                   ),
                 ),
                 const Spacer(),
-
                 Padding(
-                  padding: const EdgeInsets.only(top: AppSize.s20,left:AppSize.s20),
+                  padding: const EdgeInsets.only(top: AppSize.s20, left: AppSize.s20),
                   child: Center(
                     child: Text(
+                      widget.text,
                       textAlign: TextAlign.center,
                       overflow: TextOverflow.clip,
-                      'english',
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge
@@ -89,8 +90,7 @@ class _MaterialViewState extends State<MaterialView>
             TabBar(
               dividerColor: Colors.black,
               labelColor: ColorManager.darkPrimary,
-              indicatorColor:
-                  ColorManager.darkPrimary,
+              indicatorColor: ColorManager.darkPrimary,
               unselectedLabelColor: ColorManager.white,
               controller: _tabController,
               isScrollable: true,

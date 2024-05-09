@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:fci/presentation/resources/assets_manager.dart';
 import 'package:fci/presentation/resources/color_manager.dart';
 import 'package:fci/presentation/resources/strings_manager.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,60 +20,66 @@ class _DeveloperPageState extends State<DeveloperPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorManager.gray,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height * 1.5 / 10,
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.people,
-                    color: infoDisplayed ? ColorManager.primary : Colors.white,
-                    size: 40,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(),
-                    child: Center(
-                      child: Text(
-                        AppStrings.aboutDevelopers,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height * 1.5 / 10,
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.people,
+                      color:
+                          infoDisplayed ? ColorManager.primary : Colors.white,
+                      size: 40,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(),
+                      child: Center(
+                        child: Text(
+                          AppStrings.developers,
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-          Divider(
-            thickness: 5,
-            color: Color(0XFF2B2B2B),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              developerInfo.isNotEmpty ? developerInfo : AppStrings.developersInfo,
-              style: TextStyle(
-                fontSize: 22,
-                color: Colors.white,
-              ),
-              textAlign: TextAlign.center,
+            const Divider(
+              thickness: 5,
+              color: Color(0XFF2B2B2B),
             ),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              buildDeveloperButton('UX/UI Designers', AppStrings.ui),
-              buildDeveloperButton('Mobile APP Developers', AppStrings.mobile),
-              buildDeveloperButton('Backend Developers', AppStrings.back),
-            ],
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                developerInfo.isNotEmpty
+                    ? developerInfo
+                    : AppStrings.developersInfo,
+                style: const TextStyle(
+                  fontSize: 22,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                buildDeveloperButton('UX/UI Designers', AppStrings.ui),
+                buildDeveloperButton(
+                    'Mobile APP Developers', AppStrings.mobile),
+                buildDeveloperButton('Backend Developers', AppStrings.back),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -86,7 +91,8 @@ class _DeveloperPageState extends State<DeveloperPage> {
         widthFactor: 0.9,
         child: ElevatedButton(
           style: ButtonStyle(
-            padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(20)),
+            padding:
+                MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(20)),
             backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
               if (states.contains(MaterialState.pressed)) {
                 return ColorManager.primary;
@@ -101,7 +107,7 @@ class _DeveloperPageState extends State<DeveloperPage> {
               infoDisplayed = true;
             });
 
-            timer = Timer(Duration(seconds: 10), () {
+            timer = Timer(const Duration(seconds: 10), () {
               setState(() {
                 infoDisplayed = false;
               });
@@ -110,11 +116,14 @@ class _DeveloperPageState extends State<DeveloperPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Text(
                 buttonText,
                 style: TextStyle(
-                  color: infoDisplayed ? Colors.white : ColorManager.gray, // Change text color to white when info is displayed
+                  color: infoDisplayed
+                      ? Colors.white
+                      : ColorManager
+                          .gray, // Change text color to white when info is displayed
                   fontSize: 24,
                 ),
               ),

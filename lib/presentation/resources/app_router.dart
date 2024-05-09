@@ -29,7 +29,7 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) =>  DeveloperPage(),
+          builder: (context, state) =>  SplashView(),
       ),
       GoRoute(
         path: kCollegeSpecializationView,
@@ -66,7 +66,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kMaterialView,
-        builder: (context, state) =>  const MaterialView(),
+        builder: (context, state) {
+          return MaterialView(text:(state.extra as String? )?? '',);
+
+        },
       ),
       GoRoute(
         path: kSettingsView,
